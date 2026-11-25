@@ -1,0 +1,46 @@
+{
+  "type": "module",
+  "name": "@hazae41/turbine",
+  "version": "0.0.0",
+  "description": "Bobine over HTTP and WebSocket",
+  "repository": "github:hazae41/turbine",
+  "author": "hazae41",
+  "license": "MIT",
+  "scripts": {
+    "examine": "deno lint ./src && deno check ./src && deno test -R ./src",
+    "prepack": "rm -rf ./out && tsc && tscousin",
+    "produce": "deno run -A ./src/mod.ts serve --data=./local --uuid=7d07d60d-cb47-4b6f-ad1d-f2650610ce67",
+    "develop": "deno run -A ./src/mod.ts serve --data=./local --uuid=7d07d60d-cb47-4b6f-ad1d-f2650610ce67 --dev"
+  },
+  "files": [
+    "./out"
+  ],
+  "exports": {
+    ".": {
+      "types": "./out/mod.d.ts",
+      "import": "./out/mod.js"
+    }
+  },
+  "dependencies": {
+    "@hazae41/bobine": "^0.1.0",
+    "@hazae41/jsonrpc": "^1.2.1",
+    "@hazae41/mutex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@hazae41/phobos": "^2.0.16",
+    "@hazae41/tscousin": "^1.0.28",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "keywords": [
+    "jsonrpc",
+    "webassembly",
+    "typescript",
+    "esmodules",
+    "tested",
+    "unit-tested"
+  ],
+  "bin": {
+    "turbine": "./out/mod.js"
+  }
+}
