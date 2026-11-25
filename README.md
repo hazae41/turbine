@@ -3,7 +3,7 @@
 [Bobine](https://github.com/hazae41/bobine) over HTTP and WebSocket
 
 ```bash
-deno install --global @hazae41/turbine
+deno install --global npm:@hazae41/turbine --name turbine
 ```
 
 [**📦 NPM**](https://www.npmjs.com/package/@hazae41/turbine)
