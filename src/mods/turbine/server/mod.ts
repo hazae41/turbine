@@ -10,10 +10,9 @@ export class Server {
   readonly subserver: RpcServer
 
   constructor(
-    readonly uuid: string,
-    readonly path: string
+    readonly worker: RpcWorkerClient
   ) {
-    this.subserver = new RpcServer(uuid, path)
+    this.subserver = new RpcServer(worker)
   }
 
   async setup() {
@@ -60,17 +59,12 @@ export class Server {
  */
 export class RpcServer {
 
-  readonly worker: RpcWorkerClient
-
   readonly seens = new Set<string>()
   readonly mutex = new Mutex(undefined)
 
   constructor(
-    readonly uuid: string,
-    readonly path: string
-  ) {
-    this.worker = RpcWorkerClient.spawn(uuid, path)
-  }
+    readonly worker: RpcWorkerClient
+  ) { }
 
   async setup() {
     await this.worker.setup()

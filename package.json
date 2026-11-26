@@ -22,7 +22,7 @@
     }
   },
   "dependencies": {
-    "@hazae41/bobine": "^0.1.1",
+    "@hazae41/bobine": "^0.1.2",
     "@hazae41/jsonrpc": "^1.2.1",
     "@hazae41/mutex": "^3.0.1"
   },

@@ -1,6 +1,7 @@
 /// <reference lib="deno.ns" />
 
 import { Server } from "@/mods/turbine/server/mod.ts";
+import { RpcWorkerClient } from "@hazae41/bobine";
 import process from "node:process";
 
 export async function main(args: string[]) {
@@ -49,7 +50,11 @@ export async function main(args: string[]) {
     port = Number(process.env.PORT) || 8080
   } = options
 
-  const server = new Server(uuid, path)
+  console.log("Starting...")
+
+  const worker = await RpcWorkerClient.spawn(uuid, path)
+
+  const server = new Server(worker)
 
   await server.setup()
 
