@@ -34,12 +34,12 @@ export class Server {
       return this.#upgrade(request)
 
     if (request.method === "OPTIONS")
-      return Response.json(null, { status: 204 })
+      return new Response(null, { status: 204 })
 
     if (request.method === "POST")
       return Response.json(await this.subserver.respond(await request.json()), { status: 200 })
 
-    return Response.json(null, { status: 405 })
+    return new Response(null, { status: 405 })
   }
 
   #upgrade(request: Request) {
