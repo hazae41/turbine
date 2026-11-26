@@ -36,6 +36,9 @@ export class Server {
     if (request.method === "OPTIONS")
       return new Response(null, { status: 204 })
 
+    if (request.method === "GET")
+      return new Response("Yes it works")
+
     if (request.method === "POST")
       return Response.json(await this.subserver.respond(await request.json()))
 
