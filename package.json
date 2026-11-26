@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@hazae41/turbine",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Bobine over HTTP and WebSocket",
   "repository": "github:hazae41/turbine",
   "author": "hazae41",
