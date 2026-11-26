@@ -37,7 +37,7 @@ export class Server {
       return new Response(null, { status: 204 })
 
     if (request.method === "POST")
-      return Response.json(await this.subserver.respond(await request.json()), { status: 200 })
+      return Response.json(await this.subserver.respond(await request.json()))
 
     return new Response(null, { status: 405 })
   }
